@@ -1,0 +1,80 @@
+from abc import ABC , abstractclassmethod
+
+class immer(ABC):
+    def __init__(self,pasatiempos):
+        self.pasatiempos=pasatiempos
+
+carga=immer("Inicio del dia")
+hobby=immer("jugar futbol")
+hobby2=immer("toco guitarra")
+hobby3=immer("Juego videojuegos")
+
+@abstractclassmethod
+def pasatiempo():
+     return"rutina de la semana".format(carga.pasatiempos)
+        
+
+@abstractclassmethod
+def pasatiempo2():
+     return"tambien me gusta".format(hobby2.pasatiempos)
+
+@abstractclassmethod
+def pasatiempo3():
+     return"tambien me gusta".format(hobby3.pasatiempos)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+from Immer import hobby
+
+class futbolista():
+     
+    def agrado():
+     return"lo que mas me agrada es {}".format(hobby.pasatiempos) 
+      
+Jugar=futbolista
+print(Jugar.agrado())
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+from Immer import hobby2
+
+class musico():
+     pass
+     def agrado2():
+          return"Tambien lo que me gusta hacer es:".format(hobby2.pasatiempos)
+     
+tocar=musico     
+print(tocar.agrado2())
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+from Immer import immer
+from Immer import hobby
+from Immer import hobby2
+from Immer import hobby3
+from Futbolista import futbolista
+from musico import musico
+
+class ayudante(immer,futbolista,musico):
+     pass
+     def rutina():
+      return"Mis tres pasatiempos preferidos son estos"
+     
+     def Dia():
+        return"Los domingos me gusta {}".format(hobby.pasatiempos)
+     
+     def Dia2():
+        return"en los dias de iglesia {}".format(hobby2.pasatiempos)
+     
+     def Dia3():
+        return"y en mis tiempos libres cuando no tengo tarea {}".format(hobby3.pasatiempos)
+     
+rutinaDiaria=ayudante
+print(rutinaDiaria.rutina())
+print(rutinaDiaria.Dia())
+print(rutinaDiaria.Dia2())
+print(rutinaDiaria.Dia3())
+
+
+
